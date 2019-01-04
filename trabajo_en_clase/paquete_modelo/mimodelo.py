@@ -1,7 +1,7 @@
 class Equipo(object):
 
     def __init__(self, n, c, cam, nj):
-    #Atributos de estudiante
+    #Atributos de estudiante con los valores enviados desde el archivo
         self.nombre = n
         self.ciudad = c
         self.campeonatos = int(cam)
@@ -34,21 +34,25 @@ class Equipo(object):
     def __str__(self): #equivalente al toString en java, para visualizar los metodos como tal
         return "%s - %s - %d - %d" % (self.nombre, self.ciudad, self.campeonatos, self.numJugadores)
 
-    def __repr__(self): #equivalente al toString en java, para visualizar los metodos como tal
+    def __repr__(self): #representacion de objetos, el sorted hace referencia a este medoto
         return "%s - %s - %d - %d" % (self.nombre, self.ciudad, self.campeonatos, self.numJugadores)
+
+
 class Operaciones(object):
     
-    def __init__(self, listado):
+    def __init__(self, listado): #Recibe el listado
         self.listado_equipos = listado
 
-    def ordenar(self, op):
-        opcion = op
+    def ordenar(self, op): #Recibe la opcion ingresada por el usuario en op
+        opcion = op #Se crea la variable con el valor de op
         """
             https://docs.python.org/3/howto/sorting.html
             >>> sorted(student_objects, key=lambda student: student.age)   # sort by age
         """
+        #Condiciones para ordenar por nombre o campeonatos
 
         if opcion == 1:
             return sorted(self.listado_equipos, key=lambda equipo: equipo.nombre) #poner el __repr__     
+        
         if opcion == 2:
-           return sorted(self.listado_equipos, key=lambda equipo: equipo.campeonatos)
+            return sorted(self.listado_equipos, key=lambda equipo: equipo.campeonatos)

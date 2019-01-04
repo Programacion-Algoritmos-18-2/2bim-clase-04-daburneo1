@@ -3,7 +3,7 @@ import sys
 
 
 class MiArchivo:
-    
+    #Metodo para abrir el archivo, leer sus datos y cerrarlo
     def __init__(self):
         self.archivo = codecs.open("data/informacion.csv", "r")
 
@@ -15,7 +15,7 @@ class MiArchivo:
 
 
 class MiArchivoEscribir:
-    
+    #Metodo para crear el nuevo archivo con la informacion ordenada
     def __init__(self):
         self.archivo = codecs.open("data/informacion_ordenada.csv", "a")
 
